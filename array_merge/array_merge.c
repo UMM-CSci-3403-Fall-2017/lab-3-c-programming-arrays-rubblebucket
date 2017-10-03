@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "array_merge.h"
 #include "mergesort.h"
@@ -19,9 +20,8 @@ int* array_merge(int num_arrays, int* sizes, int** values){
 	for(int i = 0; i < num_arrays; ++i){
 		newSize = newSize + sizes[i];
 	}
-
 	int* set;
-	set = (int*) calloc(newSize, sizeof(int));
+	set = (int*) calloc(newSize + 1, sizeof(int));
 
 	set[0] = 0;
 
